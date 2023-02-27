@@ -24,16 +24,30 @@ class Login:
         # Frames del Notebook
         self.ventana1 = ttk.Frame(notebook, width=400, height=280)
         self.ventana2 = ttk.Frame(notebook, width=400, height=280)
+        self.ventana3 = ttk.Frame(notebook, width=400, height=280)
 
         self.ventana1.pack(fill='both', expand=True)
         self.ventana2.pack(fill='both', expand=True)
+        self.ventana3.pack(fill='both', expand=True)
 
         # Agregar frames al notebook
         notebook.add(self.ventana1, text='Online')
         notebook.add(self.ventana2, text='Offline')
+        notebook.add(self.ventana3, text="Validación IP")
 
+        frame2 = Frame(self.window, bg=fondo)
+
+        #   CREDITOS    #
+        frame2.grid(row=10, column=0)
+        label2 = Label(frame2, text="Creado por Roberto Alan Rodriguez Monroy", fg="white", bg=fondo, font=("Arial", 8))
+        label2.grid(row=10, column=0, padx=10, columnspan=2)
+        self.mostrar_ventana2()
+        self.ventana1_seleccion()
+
+    #VENTANA 2 (OFFLINE)
+    def mostrar_ventana2(self):
         configuraciones = ["AP14", "QA10", 'QA8']
- 
+        fondo = 'black'; letra = 'white'; color_check = 'black'
         self.ventana2_1 = Frame(self.ventana2, bg=fondo)
         self.ventana2_1.place(x=100, y=10)
 
@@ -90,14 +104,6 @@ class Login:
 
         self.ventana2_1.bind("<Return>", self.funcion1_2)   #   Funcion al presionar <Enter> (No funciona idk)
 
-        frame2 = Frame(self.window, bg=fondo)
-
-        #   CREDITOS    #
-        frame2.grid(row=10, column=0)
-        label2 = Label(frame2, text="Creado por Roberto Alan Rodriguez Monroy", fg="white", bg=fondo, font=("Arial", 8))
-        label2.grid(row=10, column=0, padx=10, columnspan=2)
-
-        self.ventana1_seleccion()
 
     def ventana1_seleccion(self):
         fondo = 'black'; letra = 'white' ; color_check = 'black' 
